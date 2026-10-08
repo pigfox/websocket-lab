@@ -1,0 +1,38 @@
+# The hub, and a load generator you run against it.
+#
+#   docker compose up -d hub                    # start the hub (connects to the feed)
+#   ./scripts/scale.sh 10000 50000 100000        # run the levels, write results/
+#
+# The hub listens on four ports so one load generator can open more than one
+# port's worth of connections (a client address can reuse its local ports per
+# destination port). Both containers raise their own file-descriptor limit and
+# widen their own ephemeral port range; both settings are per-container, so
+# nothing on the host needs root.
+name: websocket-lab
+
+services:
+  hub:
+    build: .
+    image: websocket-lab
+    environment:
+      HUB_ADDRS: ":8080,:8081,:8082,:8083"
+    ports:
+      - "127.0.0.1:8080:8080"
+    ulimits:
+      nofile: { soft: 1048576, hard: 1048576 }
+    sysctls:
+      net.core.somaxconn: "65535"
+      net.ipv4.tcp_max_syn_backlog: "65535"
+
+  loadgen:
+    image: websocket-lab
+    profiles: ["load"]
+    depends_on: [hub]
+    entrypoint: ["/usr/local/bin/loadgen"]
+    user: "${HOST_UID:-1000}"
+    ulimits:
+      nofile: { soft: 1048576, hard: 1048576 }
+    sysctls:
+      net.ipv4.ip_local_port_range: "1024 65535"
+    volumes:
+      - ./results:/results

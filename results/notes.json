@@ -1,0 +1,9 @@
+{
+  "setup": "docker compose on one laptop: the hub in one container listening on four ports, the load generator in another, each level against a freshly started hub, measured for 60 s after every subscriber had connected.",
+  "limitations": [
+    "The hub and the load generator share one machine's 8 logical CPUs, so each level measures the two together. Most of the CPU time on both sides is the kernel's TCP work — one write per frame at the hub, one read per frame at the subscriber (profiled in development, not recorded in these files).",
+    "The machine was a laptop with a desktop session running, using about one CPU of its own during the runs.",
+    "The feed's rate is the market's: each level ran at a different time and saw a different number of prices from the feed, recorded per run as feed/s. Levels are therefore comparable in what the hub did with what arrived, not in identical input.",
+    "Latency is measured from the moment the hub read a price from the feed to the moment a subscriber read it, on one clock. The time the price spent between the exchange and this machine is not included."
+  ]
+}

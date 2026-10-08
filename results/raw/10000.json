@@ -1,0 +1,171 @@
+{
+  "label": "10000 subscribers",
+  "started_utc": "2026-10-08T21:32:24Z",
+  "machine": {
+    "cpu_model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+    "cpus": 8,
+    "mem_total": "63619772 kB",
+    "kernel": "7.0.0-38-generic",
+    "goarch": "amd64"
+  },
+  "go_version": "go1.27.2",
+  "clients": 10000,
+  "duration": "1m0s",
+  "urls": [
+    "ws://hub:8080/ws",
+    "ws://hub:8081/ws",
+    "ws://hub:8082/ws",
+    "ws://hub:8083/ws"
+  ],
+  "result": {
+    "clients_requested": 10000,
+    "upgraded": 10000,
+    "connected": 10000,
+    "never_served": 0,
+    "connect_failed": 0,
+    "dropped_by_hub": 0,
+    "ramp_seconds": 2.17050854,
+    "window_seconds": 60.041004751,
+    "quotes": 5626088,
+    "quotes_per_second": 93704.09478209632,
+    "frames": 3358058,
+    "conflated": 1594439,
+    "latency": {
+      "samples": 5626088,
+      "p50_us": 120000,
+      "p95_us": 250000,
+      "p99_us": 320000,
+      "max_us": 449362
+    }
+  },
+  "hub_peaks": {
+    "goroutines": 20012,
+    "heap_mib": 307.92913818359375,
+    "sys_mib": 466.54723358154297,
+    "samples": 125
+  },
+  "hub_before": {
+    "goroutines": 12,
+    "heap_mib": 0.764068603515625,
+    "sys_mib": 13.529548645019531,
+    "cpu_seconds": 0.058893,
+    "hub": {
+      "clients": 0,
+      "peak_clients": 0,
+      "published": 21,
+      "fanned": 20,
+      "upstream_conflated": 1,
+      "fanout_nanos": 4695,
+      "offered": 0,
+      "delivered": 0,
+      "frames": 0,
+      "conflated": 0,
+      "drops": {},
+      "classes": {},
+      "feed": {
+        "up": true,
+        "since": 1791495143188,
+        "reconnects": 0
+      },
+      "last": [
+        {
+          "c": "BTC",
+          "b": "81659.0",
+          "a": "81660.0",
+          "x": 1791495144086,
+          "r": 1791495144359463817,
+          "s": 9
+        },
+        {
+          "c": "ETH",
+          "b": "2473.5",
+          "a": "2473.6",
+          "x": 1791495144086,
+          "r": 1791495144359507327,
+          "s": 6
+        },
+        {
+          "c": "SOL",
+          "b": "109.93",
+          "a": "109.94",
+          "x": 1791495144086,
+          "r": 1791495144359518203,
+          "s": 6
+        }
+      ]
+    }
+  },
+  "hub_after": {
+    "goroutines": 12,
+    "heap_mib": 159.92082977294922,
+    "sys_mib": 466.53942108154297,
+    "cpu_seconds": 232.066846,
+    "hub": {
+      "clients": 0,
+      "peak_clients": 10000,
+      "published": 782,
+      "fanned": 621,
+      "upstream_conflated": 161,
+      "fanout_nanos": 45258952764,
+      "offered": 5886589,
+      "delivered": 5775546,
+      "frames": 3451554,
+      "conflated": 109627,
+      "drops": {
+        "write failed": 2
+      },
+      "classes": {
+        "loadgen": {
+          "clients": 0,
+          "offered": 5886589,
+          "delivered": 5775546,
+          "conflated": 109627,
+          "drops": {
+            "write failed": 2
+          }
+        }
+      },
+      "feed": {
+        "up": true,
+        "since": 1791495143188,
+        "reconnects": 0
+      },
+      "last": [
+        {
+          "c": "BTC",
+          "b": "81649.0",
+          "a": "81650.0",
+          "x": 1791495207047,
+          "r": 1791495207354987001,
+          "s": 286
+        },
+        {
+          "c": "ETH",
+          "b": "2473.4",
+          "a": "2473.5",
+          "x": 1791495206040,
+          "r": 1791495206450227370,
+          "s": 187
+        },
+        {
+          "c": "SOL",
+          "b": "109.9",
+          "a": "109.91",
+          "x": 1791495206913,
+          "r": 1791495207215986786,
+          "s": 309
+        }
+      ]
+    }
+  },
+  "hub_cpu_seconds_during_run": 232.007953,
+  "upstream_quotes_in_window": 716,
+  "upstream_quotes_per_second": 11.933134616809127,
+  "hub_delivered_in_window": 5625575,
+  "hub_conflated_in_window": 104152,
+  "hub_cpu_seconds_in_window": 222.126044,
+  "hub_offered_in_window": 5728248,
+  "hub_fanout_seconds_in_window": 44.083136801,
+  "hub_fanned_in_window": 573,
+  "hub_inbox_conflated_in_window": 147
+}

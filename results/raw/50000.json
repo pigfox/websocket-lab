@@ -1,0 +1,171 @@
+{
+  "label": "50000 subscribers",
+  "started_utc": "2026-10-08T21:33:30Z",
+  "machine": {
+    "cpu_model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+    "cpus": 8,
+    "mem_total": "63619772 kB",
+    "kernel": "7.0.0-38-generic",
+    "goarch": "amd64"
+  },
+  "go_version": "go1.27.2",
+  "clients": 50000,
+  "duration": "1m0s",
+  "urls": [
+    "ws://hub:8080/ws",
+    "ws://hub:8081/ws",
+    "ws://hub:8082/ws",
+    "ws://hub:8083/ws"
+  ],
+  "result": {
+    "clients_requested": 50000,
+    "upgraded": 50000,
+    "connected": 50000,
+    "never_served": 0,
+    "connect_failed": 0,
+    "dropped_by_hub": 0,
+    "ramp_seconds": 20.597621488,
+    "window_seconds": 60.097100592,
+    "quotes": 9139709,
+    "quotes_per_second": 152082.36187714952,
+    "frames": 3229903,
+    "conflated": 28968421,
+    "latency": {
+      "samples": 9139709,
+      "p50_us": 700000,
+      "p95_us": 2000000,
+      "p99_us": 2000000,
+      "max_us": 2113736
+    }
+  },
+  "hub_peaks": {
+    "goroutines": 100012,
+    "heap_mib": 1491.5172805786133,
+    "sys_mib": 2228.342918395996,
+    "samples": 169
+  },
+  "hub_before": {
+    "goroutines": 12,
+    "heap_mib": 1.00433349609375,
+    "sys_mib": 13.521736145019531,
+    "cpu_seconds": 0.055658,
+    "hub": {
+      "clients": 0,
+      "peak_clients": 0,
+      "published": 7,
+      "fanned": 7,
+      "upstream_conflated": 0,
+      "fanout_nanos": 2611,
+      "offered": 0,
+      "delivered": 0,
+      "frames": 0,
+      "conflated": 0,
+      "drops": {},
+      "classes": {},
+      "feed": {
+        "up": true,
+        "since": 1791495209006,
+        "reconnects": 0
+      },
+      "last": [
+        {
+          "c": "BTC",
+          "b": "81649.0",
+          "a": "81650.0",
+          "x": 1791495209478,
+          "r": 1791495209780263248,
+          "s": 1
+        },
+        {
+          "c": "ETH",
+          "b": "2473.4",
+          "a": "2473.5",
+          "x": 1791495209745,
+          "r": 1791495209989420223,
+          "s": 2
+        },
+        {
+          "c": "SOL",
+          "b": "109.9",
+          "a": "109.91",
+          "x": 1791495209678,
+          "r": 1791495209923238957,
+          "s": 4
+        }
+      ]
+    }
+  },
+  "hub_after": {
+    "goroutines": 183,
+    "heap_mib": 1138.7812957763672,
+    "sys_mib": 2228.342918395996,
+    "cpu_seconds": 326.125872,
+    "hub": {
+      "clients": 141,
+      "peak_clients": 50000,
+      "published": 1046,
+      "fanned": 285,
+      "upstream_conflated": 761,
+      "fanout_nanos": 82119693556,
+      "offered": 11492732,
+      "delivered": 11413537,
+      "frames": 4267330,
+      "conflated": 15246,
+      "drops": {
+        "write failed": 8122
+      },
+      "classes": {
+        "loadgen": {
+          "clients": 141,
+          "offered": 11492732,
+          "delivered": 11413537,
+          "conflated": 15246,
+          "drops": {
+            "write failed": 8122
+          }
+        }
+      },
+      "feed": {
+        "up": true,
+        "since": 1791495209006,
+        "reconnects": 0
+      },
+      "last": [
+        {
+          "c": "BTC",
+          "b": "81635.0",
+          "a": "81636.0",
+          "x": 1791495294256,
+          "r": 1791495294646899843,
+          "s": 379
+        },
+        {
+          "c": "ETH",
+          "b": "2473.0",
+          "a": "2473.1",
+          "x": 1791495294377,
+          "r": 1791495294753624247,
+          "s": 343
+        },
+        {
+          "c": "SOL",
+          "b": "109.9",
+          "a": "109.91",
+          "x": 1791495292644,
+          "r": 1791495293109734532,
+          "s": 324
+        }
+      ]
+    }
+  },
+  "hub_cpu_seconds_during_run": 326.070214,
+  "upstream_quotes_in_window": 752,
+  "upstream_quotes_per_second": 12.52238113190191,
+  "hub_delivered_in_window": 9147119,
+  "hub_conflated_in_window": 2991,
+  "hub_cpu_seconds_in_window": 236.11015400000002,
+  "hub_offered_in_window": 9150407,
+  "hub_fanout_seconds_in_window": 60.666986827,
+  "hub_fanned_in_window": 184,
+  "hub_inbox_conflated_in_window": 568
+}
